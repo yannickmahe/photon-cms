@@ -4,7 +4,7 @@
 		<title><?php include_partial('title'); ?></title>
 	</head>
 	<body>
-		<?php include_partial('menu'); ?>
+		<?php include_partial('header'); ?>
 		<?php echo $content; ?>
 		<?php include_partial('footer'); ?>
 	</body>
