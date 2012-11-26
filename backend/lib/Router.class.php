@@ -38,4 +38,11 @@ class Router{
 		$controller->dispatch($actionName, $request);
 	}
 
+	public static function genUrl($controller, $action = 'index', $variables = array()){
+		$url = "index.php?controller=$controller&action=$action";
+		foreach($variables as $name => $value){
+			$url .= "&$name=$value";
+		}
+		return $url;
+	}
 }

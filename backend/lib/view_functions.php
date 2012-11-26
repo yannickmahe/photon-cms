@@ -5,11 +5,7 @@
  * 
  */
 function url_for($controller,$action = 'index',$variables = array()){
-	$url = "index.php?controller=$controller&action=$action";
-	foreach($variables as $name => $value){
-		$url .= "&$name=$value";
-	}
-	return $url;
+	return Router::genUrl($controller,$action,$variables);
 }
 
 function include_partial($name,$variables){

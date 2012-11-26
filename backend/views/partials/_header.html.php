@@ -6,16 +6,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="<?php echo url_for('pages'); ?>">Backend</a>
+      <a class="brand" href="<?php echo url_for('pages'); ?>">FTL CMS Backend</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li <?php if(is_current('pages')): ?> class="active" <?php endif; ?>><a href="<?php echo url_for('pages'); ?>">Pages</a></li>
-          <li <?php if(is_current('templates')): ?> class="active" <?php endif; ?>><a href="<?php echo url_for('dashboard'); ?>">Templates</a></li>
+          <li <?php if(is_current('themes')): ?> class="active" <?php endif; ?>><a href="<?php echo url_for('themes'); ?>">Themes</a></li>
           <li <?php if(is_current('layout')): ?> class="active" <?php endif; ?>><a href="<?php echo url_for('layout'); ?>">Site layout</a></li>
           <li <?php if(is_current('users')): ?> class="active" <?php endif; ?>><a href="<?php echo url_for('users'); ?>">Users</a></li>
           <li><a href="./preview" target="_blank">Preview</a></li>
+          <li><a href="<?php echo url_for('publish'); ?>">Publish all</a></li>
         </ul>
-         <a class="btn pull-right" href="<?php echo url_for('publish'); ?>">Publish all</a>
+         
       </div><!--/.nav-collapse -->
     </div>
   </div>

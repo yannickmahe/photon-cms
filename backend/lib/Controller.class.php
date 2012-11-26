@@ -34,4 +34,13 @@ class Controller{
 
 		echo View::render('views/layout.html.php', array('content' => $content));
 	}
+
+	public function redirect($controller,$action = 'index',$variables = array()){
+		$this->redirect_to_url(Router::genUrl($controller,$action,$variables));
+	}
+
+	public function redirect_to_url($url){
+		// no redirect
+		header( "Location: $url" );
+	}
 }
