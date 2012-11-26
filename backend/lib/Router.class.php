@@ -1,5 +1,7 @@
 <?php
 
+require_once('lib/Context.class.php');
+
 class Router{
 	
 	public static function dispatch($request){
@@ -12,6 +14,11 @@ class Router{
 
 		$controllerName = $request['controller'];
 		$actionName		= $request['action'];
+
+		$context = Context::getInstance();
+		$context->action = $actionName;
+		$context->controller = $controllerName;
+
 		unset($request['action'],$request['controller']);
 
 		$className = ucfirst($controllerName).'Controller';

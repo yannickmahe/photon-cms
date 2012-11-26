@@ -20,6 +20,7 @@ class Controller{
 	}
 
 	public function dispatch($action,$request){
+
 		$actionName = $action.'Action';
 		$variables = $this->$actionName($request);
 		$this->render($action);

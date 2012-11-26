@@ -20,3 +20,11 @@ function include_partial($name,$variables){
 	echo View::render($filePath, $variables);
 }
 
+function is_current($controller, $action = null){
+	if($action === null){
+		return Context::getInstance()->controller == $controller;
+	}
+	
+	return Context::getInstance()->action == $action && Context::getInstance()->controller == $controller;
+}
+

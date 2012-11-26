@@ -1,1 +1,1 @@
-Backend <?php echo $current_controller.' | '.$current_action ?>
+Backend
