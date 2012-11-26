@@ -1,4 +1,4 @@
-t<?php
+<?php
 
 include_once('lib/orm/BaseTable.class.php');
 

@@ -24,18 +24,13 @@ class PagesController extends Controller{
 			$page->save();
 			$this->redirect('pages');
 		}
-		
 
-		if($request['id']){
-			$id = $request['id'];
-		}
-
-		if(!$id){
+		if(!$request['id']){
 			$this->title = "New page";
 			$this->page = new Page();
 		} else {
 			$this->title = "Edit page";
-			$this->page = Page::find($id);
+			$this->page = Page::find($request['id']);
 		}
 	}
 

@@ -17,10 +17,8 @@ class Connection{
 			$this->sqlite3 = new SQLite3('db/ftl.db');
 		} else {
 			$this->sqlite3 = new SQLite3('db/ftl.db');
-			//init database
-			//TODO: put the init schema in config
-			$this->sqlite3->exec('CREATE TABLE page (id INTEGER PRIMARY KEY, title STRING, url STRING, html TEXT);');
-			$this->sqlite3->exec("INSERT INTO page (title, url, html) VALUES ('Home','/','Homepage');");
+			$init = file_get_contents('db/init.sql');
+			$this->sqlite3->exec($init);
 		}
 		
 	}
