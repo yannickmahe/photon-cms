@@ -1,1 +1,1 @@
-PAGE INDEX
+<h1>Pages</h1>

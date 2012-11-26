@@ -15,6 +15,13 @@ class Router{
 		$controllerName = $request['controller'];
 		$actionName		= $request['action'];
 
+		if(!$actionName){
+			$actionName = 'index';
+		}
+		if(!$controllerName){
+			$controllerName = 'dashboard';
+		}
+
 		$context = Context::getInstance();
 		$context->action = $actionName;
 		$context->controller = $controllerName;
