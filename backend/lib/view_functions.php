@@ -1,7 +1,7 @@
 <?php
 
 /**
- * All the functions usable in a view
+ * All the helper functions usable in a view
  * 
  */
 function url_for($controller,$action = 'index',$variables = array()){

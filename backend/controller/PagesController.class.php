@@ -4,7 +4,7 @@ require_once('lib/Controller.class.php');
 
 class PagesController extends Controller{
 
-	public function listAction($request){
+	public function indexAction($request){
 		$this->pageName = 't';
 	}
 }
