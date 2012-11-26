@@ -13,15 +13,18 @@
 				<th>Actions</th>
 			</tr>
 		</thead>
-		<tr>
-			<td>1</td>
-			<td>About</td>
-			<td>/about</td>
-			<td>
-				<a class="btn" href="#"><i class="icon-edit"></i> Edit</a>
-				<a class="btn" href="#"><i class="icon-share"></i> Preview</a>
-			</td>
-		</tr>
+		<?php foreach ($pages as $page): ?>
+			<tr>
+				<td><?php echo $page->id; ?></td>
+				<td><?php echo $page->title; ?></td>
+				<td><?php echo $page->url; ?></td>
+				<td>
+					<a class="btn" href="<?php echo url_for('pages','edit',array('id' => $page->id)) ?>"><i class="icon-edit"></i> Edit</a>
+					<a class="btn" href="preview<?php echo $page->url; ?>"><i class="icon-share"></i> Preview</a>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+
 	</table>
 
 </div>

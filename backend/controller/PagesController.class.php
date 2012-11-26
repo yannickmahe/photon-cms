@@ -23,10 +23,11 @@ class PagesController extends Controller{
 		}
 
 		if(!$id){
-
 			$this->title = "New page";
+			$this->page = new Page();
 		} else {
 			$this->title = "Edit page";
+			$this->page = Page::find($id);
 		}
 	}
 
