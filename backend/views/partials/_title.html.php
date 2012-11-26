@@ -1,1 +1,1 @@
-Backend
+Backend | <?php echo ucfirst(Context::getInstance()->controller) ?>

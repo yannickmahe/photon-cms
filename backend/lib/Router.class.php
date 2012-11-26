@@ -19,7 +19,7 @@ class Router{
 			$actionName = 'index';
 		}
 		if(!$controllerName){
-			$controllerName = 'dashboard';
+			$controllerName = 'pages';
 		}
 
 		$context = Context::getInstance();
