@@ -10,11 +10,19 @@ class PagesController extends Controller{
 	}
 
 	public function editAction($request){
-
 		if($request['page']){
-			$page = new Page();
-
+			$submit = $request['page'];
+			if($submit['id'] != ''){
+				$id = $submit['id'];
+				$page = Page::find($id);
+			} else {
+				$page = new Page();
+			}
+			$page->title = $submit['title'];
+			$page->url = $submit['url'];
+			$page->html = $submit['html'];
 			$page->save();
+			$this->redirect('pages');
 		}
 		
 
@@ -29,6 +37,14 @@ class PagesController extends Controller{
 			$this->title = "Edit page";
 			$this->page = Page::find($id);
 		}
+	}
+
+	public function deleteAction($request){
+		$page = Page::find($request['id']);
+		if($page){
+			$page->delete();
+		}
+		$this->redirect('pages');
 	}
 
 

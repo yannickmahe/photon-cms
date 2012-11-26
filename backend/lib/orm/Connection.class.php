@@ -19,7 +19,8 @@ class Connection{
 			$this->sqlite3 = new SQLite3('db/ftl.db');
 			//init database
 			//TODO: put the init schema in config
-			$this->sqlite3->exec('CREATE TABLE page (id INTEGER PRIMARY KEY, title STRING, url STRING, html TEXT)');
+			$this->sqlite3->exec('CREATE TABLE page (id INTEGER PRIMARY KEY, title STRING, url STRING, html TEXT);');
+			$this->sqlite3->exec("INSERT INTO page (title, url, html) VALUES ('Home','/','Homepage');");
 		}
 		
 	}
@@ -28,7 +29,12 @@ class Connection{
 		return $this->sqlite3->query($query);
 	}
 
-	public function exec($query){
-		return $this->sqlite3->exec($query);
+	public function insert($query){
+		$this->sqlite3->exec($query);
+		return $this->sqlite3->lastInsertRowID();
+	}
+
+	public function escapeString($string){
+		return $this->sqlite3->escapeString($string);
 	}
 }

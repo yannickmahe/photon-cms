@@ -13,7 +13,7 @@
           <li <?php if(is_current('themes')): ?> class="active" <?php endif; ?>><a href="<?php echo url_for('themes'); ?>">Themes</a></li>
           <li <?php if(is_current('layout')): ?> class="active" <?php endif; ?>><a href="<?php echo url_for('layout'); ?>">Site layout</a></li>
           <li <?php if(is_current('users')): ?> class="active" <?php endif; ?>><a href="<?php echo url_for('users'); ?>">Users</a></li>
-          <li><a href="./preview" target="_blank">Preview</a></li>
+          <li><a href="/preview" target="_blank">Preview</a></li>
           <li><a href="<?php echo url_for('publish'); ?>">Publish all</a></li>
         </ul>
          
