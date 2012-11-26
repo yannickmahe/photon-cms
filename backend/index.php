@@ -1,5 +1,11 @@
 <?php
 
-include_once('controller/FrontController.class.php');
+include_once('lib/Router.class.php');
 
-FrontController::dispatch($_REQUEST);
+try{
+	Router::dispatch($_REQUEST);
+} catch(Exception $e){
+	echo "<h1>Error</h1>";
+	echo $e->getTraceAsString();
+}
+
