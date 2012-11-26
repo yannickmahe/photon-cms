@@ -4,11 +4,15 @@ require_once('lib/View.class.php');
 
 class Controller{
 
-	private function getViewsFolder(){
+	private function getName(){
 		$className = get_class($this);
 		$name = str_replace('Controller', '', $className);
 		$name = lcfirst($name);
-		return 'views'.DIRECTORY_SEPARATOR.$name;
+		return $name;
+	}
+
+	private function getViewsFolder(){
+		return 'views'.DIRECTORY_SEPARATOR.$this->getName();
 	}
 
 	private function getViewFile($action){
@@ -25,8 +29,8 @@ class Controller{
 		$contentFilePath = $this->getViewsFolder().DIRECTORY_SEPARATOR.$this->getViewFile($action);
 
 		$variables = get_object_vars($this);
-		$content = View::renderView($contentFilePath,$variables);
+		$content = View::render($contentFilePath,$variables);
 
-		echo View::renderView('views/layout.html.php',array('content' => $content));
+		echo View::render('views/layout.html.php', array('content' => $content));
 	}
 }

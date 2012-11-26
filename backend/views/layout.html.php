@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Backend</title>
+		<title><?php include_partial('title'); ?></title>
 	</head>
 	<body>
-		ta
+		<?php include_partial('menu'); ?>
 		<?php echo $content; ?>
-		ta
+		<?php include_partial('footer'); ?>
 	</body>
 </html>

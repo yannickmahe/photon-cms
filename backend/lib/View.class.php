@@ -2,7 +2,7 @@
 
 class View{
 
-	public static function renderView($filePath, $variables){
+	public static function render($filePath, $variables){
 		extract($variables);
 
 	    // render
@@ -11,6 +11,7 @@ class View{
 
 	    try
 	    {
+	      require_once('lib/view_functions.php');
 	      require($filePath);
 	    }
 	    catch (Exception $e)

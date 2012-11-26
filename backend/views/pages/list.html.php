@@ -1,3 +1,3 @@
 <ul>
-	<li><?php echo $pageName; ?></li>
+	<li><a href="<?php echo url_for('pages','list') ?>"><?php echo $pageName; ?></a></li>
 </ul>
