@@ -6,10 +6,7 @@ require_once('model/Page.class.php');
 class PagesController extends Controller{
 
 	public function indexAction($request){
-
 		$this->pages = Page::findAll();
-		var_dump($this->pages);
-		die;
 	}
 
 	public function editAction($request){

@@ -12,10 +12,14 @@ class BaseTable{
 	    return preg_replace_callback('/([A-Z])/', $func, $str);
 	}
 
-	private static function createObjectFromQueryResult($results){
+	private static function createObjectFromQueryResult($row_arr){
 		$className = get_called_class();
 		$obj = new $className();
-		//TODO 
+
+		foreach($row_arr as $column => $value){
+			$obj->$column = $value;
+		}
+
 		return $obj;
 	}
 
@@ -42,8 +46,8 @@ class BaseTable{
 	public static function objQuery($query){
 		$db_res = Connection::getInstance()->query($query);
 		$res = array();
-		foreach($db_res as $db_rec){
-			$res[] = self::createObjectFromQueryResult($db_rec);
+		while($row_arr = $db_res->fetchArray(SQLITE3_ASSOC)){
+			$res[] = self::createObjectFromQueryResult($row_arr);
 		}
 		return $res;
 	}

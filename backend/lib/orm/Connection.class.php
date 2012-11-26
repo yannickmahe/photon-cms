@@ -27,4 +27,8 @@ class Connection{
 	public function query($query){
 		return $this->sqlite3->query($query);
 	}
+
+	public function exec($query){
+		return $this->sqlite3->exec($query);
+	}
 }
