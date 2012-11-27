@@ -20,7 +20,7 @@ class PagesController extends Controller{
 			}
 			$page->title = $submit['title'];
 			$page->url = $submit['url'];
-			$page->html = $submit['html'];
+			$page->body_html = $submit['body_html'];
 			$page->save();
 			$this->redirect('pages');
 		}

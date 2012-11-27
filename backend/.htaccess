@@ -1,6 +1,0 @@
-Options +FollowSymLinks +ExecCGI
-
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteRule ^preview(.*)$ preview.php?url=tt$1
-</IfModule>

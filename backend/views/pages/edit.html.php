@@ -12,7 +12,12 @@
 	    <input type="text" class="input-xxlarge" name="page[url]" placeholder="/path/to/page/"  value="<?php echo $page->url ?>">
 
 		<label>HTML</label>
-	    <textarea rows="30" cols="50" id="code" type="text" style="width: 100%;" name="page[html]" class="input-xxlarge" placeholder="<p>This page is my page</p>"><?php echo $page->html ?></textarea>
+	    <textarea rows="30" 
+	    		  cols="50" 
+	    		  id="code" 
+	    		  type="text" 
+	    		  style="width: 100%;" 
+	    		  name="page[body_html]" placeholder="<p>This page is my page</p>"><?php echo $page->body_html ?></textarea>
 
 		<label>Everything ok ?</label>		
 	    <button type="submit" class="btn">Submit</button>

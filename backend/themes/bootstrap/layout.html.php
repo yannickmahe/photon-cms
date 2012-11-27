@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+	<title><?php echo $page_title; ?></title>
 	<?php include_theme_css(); ?>
 	<?php echo $page_head; ?>
 </head>
