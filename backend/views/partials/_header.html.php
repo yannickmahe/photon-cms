@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="<?php echo url_for('pages'); ?>">FTL CMS Backend</a>
+      <a class="brand" href="<?php echo url_for('pages'); ?>">Photon CMS</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li <?php if(is_current('pages')): ?> class="active" <?php endif; ?>><a href="<?php echo url_for('pages'); ?>">Pages</a></li>
