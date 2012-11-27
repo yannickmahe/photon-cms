@@ -20,7 +20,7 @@
 				<td><?php echo $page->url; ?></td>
 				<td>
 					<a class="btn" href="<?php echo url_for('pages','edit',array('id' => $page->id)) ?>"><i class="icon-edit"></i> Edit</a>
-					<a class="btn" href="/preview<?php echo $page->url; ?>"><i class="icon-share"></i> Preview</a>
+					<a class="btn" href="<?php echo app_root(); ?>/preview.php?url=<?php echo $page->url; ?>"><i class="icon-share"></i> Preview</a>
 					<?php if(!in_array($page->url,array('/','/404.html','/500.html'))):   ?>
 						<a class="btn btn-danger" href="<?php echo url_for('pages','delete',array('id' => $page->id)) ?>"><i class="icon-white icon-remove-circle"></i> Delete</a>
 					<?php endif; ?>

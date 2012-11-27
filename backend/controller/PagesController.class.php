@@ -10,7 +10,7 @@ class PagesController extends Controller{
 	}
 
 	public function editAction($request){
-		if($request['page']){
+		if(isset($request['page'])){
 			$submit = $request['page'];
 			if($submit['id'] != ''){
 				$id = $submit['id'];
