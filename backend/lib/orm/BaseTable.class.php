@@ -67,6 +67,11 @@ class BaseTable{
 		return $arr[0];
 	}
 
+	public static function findOneBy($field,$value){
+		$arr = self::findBy($field,$value);
+		return $arr[0];
+	}
+
 	public static function findBy($field,$value){
 		$field = Connection::getInstance()->escapeString($field);
 		$value = Connection::getInstance()->escapeString($value);

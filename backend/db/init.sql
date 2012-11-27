@@ -5,5 +5,5 @@ CREATE TABLE page (id INTEGER PRIMARY KEY, title STRING, url STRING, body_html T
 
 CREATE TABLE layout_item (id INTEGER PRIMARY KEY, name STRING, html TEXT);
 
-CREATE TABLE config (id INTEGER PRIMARY KEY, name STRING, html STRING);
+CREATE TABLE config (id INTEGER PRIMARY KEY, name STRING, value STRING);
 	INSERT INTO config (name, value) VALUES ('theme','bootstrap');
