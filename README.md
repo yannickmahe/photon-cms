@@ -11,7 +11,7 @@ Features
 Publishing to static files
 --------------------------
 
-When clicking on "Publish all", all the pages are dumped to static HTML pages. This means that when 
+When clicking on "Publish all", all the pages are dumped to static HTML pages. This means that when users access your website, no PHP is executed, no queries are run. This allows you to sustain a much larger load than if you are running a fully dynamic website.
 
 Full site preview before publishing
 -----------------------------------
