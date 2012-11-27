@@ -11,7 +11,7 @@ class View{
 
 	    try
 	    {
-	      require_once('lib/helpers/view_functions.php');
+	      require_once(dirname(__FILE__).'/helpers/view_functions.php');
 	      require($filePath);
 	    }
 	    catch (Exception $e)
