@@ -8,6 +8,12 @@ class Page extends BaseTable{
 		if($this->url == '/'){
 			throw new Exception("Can't delete homepage !");
 		}
+		if($this->url == '/404.html'){
+			throw new Exception("Can't delete 404 page");
+		}
+		if($this->url == '/500.html'){
+			throw new Exception("Can't delete 500 page");
+		}
 		parent::delete();
 	}
 }

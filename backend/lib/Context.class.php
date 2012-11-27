@@ -24,7 +24,13 @@ class Context{
 	public function init($directory){
 		try{
 			$this->setAppRoot($directory);
-			Router::dispatch($_REQUEST);
+			$path_info = explode('index.php', $_SERVER['REQUEST_URI']);
+			if(isset($path_info[1])){
+				$path = $path_info[1];
+			} else {
+				$path = '/';
+			}
+			Router::dispatch($path,$_REQUEST);
 		} catch(Exception $e){
 			header('HTTP/1.1 500 Internal Server Error');
 			echo "<h1>Error 500</h1>";

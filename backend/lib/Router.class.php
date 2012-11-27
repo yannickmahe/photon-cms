@@ -4,16 +4,34 @@ require_once('lib/Context.class.php');
 
 class Router{
 	
-	public static function dispatch($request){
+	public static function dispatch($path,$request){
 
 		foreach (glob("controller/*Controller.class.php") as $filename)
 		{
 		    include_once($filename);
 		}
 
+		$info = explode('/', $path);
+		if($info[0] == ''){
+			array_shift($info);
+		}
 
-		$controllerName = $request['controller'];
-		$actionName		= $request['action'];
+		if(isset($info[0])){
+			$controllerName = $info[0];
+			array_shift($info);
+			if(isset($info[0])){
+				$actionName = $info[0];
+				array_shift($info);
+			}
+		}
+
+		for($i = 0; $i < count($info); $i+=2){
+			if(isset($info[$i+1])){
+				$request[$info[$i]] = $info[$i+1];
+			} else {
+				$request[$info[$i]] = '';
+			}
+		}
 
 		if(!$actionName){
 			$actionName = 'index';
@@ -39,9 +57,12 @@ class Router{
 	}
 
 	public static function genUrl($controller, $action = 'index', $variables = array()){
-		$url = Context::getInstance()->appRoot."/index.php?controller=$controller&action=$action";
+		if(count($variables) == 0 && $action == 'index'){
+			$action = '';
+		}
+		$url = Context::getInstance()->appRoot."/index.php/$controller/$action";
 		foreach($variables as $name => $value){
-			$url .= "&$name=$value";
+			$url .= "/$name/$value";
 		}
 		return $url;
 	}

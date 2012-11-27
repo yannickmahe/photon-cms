@@ -1,9 +1,0 @@
-<IfModule mod_rewrite.c>
-  Options +FollowSymLinks -MultiViews
-  # Turn mod_rewrite on
-  RewriteEngine On
-  RewriteBase /backend/
-
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^(.*)$ index.php [QSA,L]
-</IfModule>

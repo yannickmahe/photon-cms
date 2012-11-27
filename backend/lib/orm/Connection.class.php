@@ -24,12 +24,20 @@ class Connection{
 	}
 
 	public function query($query){
-		return $this->sqlite3->query($query);
+		$ret = $this->sqlite3->query($query);
+		if($ret === false){
+			throw new Exception($this->sqlite3->lastErrorMsg());
+		} 
+		return $ret;
 	}
 
 	public function insert($query){
-		$this->sqlite3->exec($query);
-		return $this->sqlite3->lastInsertRowID();
+		if($this->sqlite3->exec($query)){
+			return $this->sqlite3->lastInsertRowID();
+		} else {
+			throw new Exception($this->sqlite3->lastErrorMsg());
+		}
+
 	}
 
 	public function escapeString($string){
