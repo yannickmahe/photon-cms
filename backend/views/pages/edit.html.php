@@ -12,10 +12,26 @@
 	    <input type="text" class="input-xxlarge" name="page[url]" placeholder="/path/to/page/"  value="<?php echo $page->url ?>">
 
 		<label>HTML</label>
-	    <textarea rows="20" cols="50" type="text" name="page[html]" class="input-xxlarge" placeholder="<p>This page is my page</p>"><?php echo $page->html ?></textarea>
+	    <textarea rows="30" cols="50" id="code" type="text" style="width: 100%;" name="page[html]" class="input-xxlarge" placeholder="<p>This page is my page</p>"><?php echo $page->html ?></textarea>
 
-		<label>Everything ok ?</label>
+		<label>Everything ok ?</label>		
 	    <button type="submit" class="btn">Submit</button>
-
 	</form>
 </div>
+
+<script src="<?php echo app_root(); ?>/assets/js/codemirror.js"></script>
+<script src="<?php echo app_root(); ?>/assets/js/codemirror-mode/htmlmixed/htmlmixed.js"></script>
+<script src="<?php echo app_root(); ?>/assets/js/codemirror-mode/xml/xml.js"></script>
+<script src="<?php echo app_root(); ?>/assets/js/codemirror-mode/javascript/javascript.js"></script>
+<script src="<?php echo app_root(); ?>/assets/js/codemirror-mode/css/css.js"></script>
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    matchBrackets: true,
+    indentUnit: 4,
+    indentWithTabs: true,
+    enterMode: "keep",
+  	mode: "text/html", 
+  	tabMode: "indent"
+ });
+</script>

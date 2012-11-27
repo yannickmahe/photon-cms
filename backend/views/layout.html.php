@@ -3,6 +3,7 @@
 	<head>
 		<title><?php include_partial('title'); ?></title>
 		<link href="<?php echo app_root(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="<?php echo app_root(); ?>/assets/css/codemirror.css" rel="stylesheet">
 	    <style type="text/css">
 	      body {
 	        padding-top: 60px;
