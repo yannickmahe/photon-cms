@@ -1,9 +1,9 @@
-FTL CMS
+Photon CMS
 =======
 
 Trying out an extremely fast CMS.
 
-FTL CMS (temp name) is a CMS with the goal of helping you build the fastest portal websites.
+Photon CMS (temp name) is a CMS with the goal of helping you build the fastest portal websites.
 
 Features
 --------
