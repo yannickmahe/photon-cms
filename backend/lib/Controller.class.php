@@ -15,11 +15,19 @@ class Controller{
 		return 'views'.DIRECTORY_SEPARATOR.$this->getName();
 	}
 
+	private function getCanonicalUrl($action,$request){
+		return Router::genUrl($this->getName(),$action,$request);
+	}
+
 	private function getViewFile($action){
 		return $action.'.html.php';
 	}
 
 	public function dispatch($action,$request){
+		
+		if(Context::getInstance()->getCurrentUrl() != $this->getCanonicalUrl($action,$request)){
+			$this->redirect_to_url($this->getCanonicalUrl());
+		}
 
 		$actionName = $action.'Action';
 		$variables = $this->$actionName($request);
