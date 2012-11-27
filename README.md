@@ -43,6 +43,22 @@ On publishing, CSS and JS are minified and multiple files are combined to make p
 If you made a mistake, rolling back to the previous version is done in one click.
 
 
+Setup
+-----
+Upload the code in your public folder. Voilà.
+
+To edit and create pages, go to <url>/backend
+
+To publish your changes click the "Publish all" link in the menu and follow instructions.
+
+
+Requirements
+------------
+
+* PHP 5.3+
+* SQlite3
+
+
 Use cases
 ---------
 * Simple portal websites
@@ -55,6 +71,10 @@ Use cases
 Examples
 --------
 Coming soon (I hope!)
+
+Contribute
+----------
+The project is just starting! If you wish to contribute, just submit a pull request - or send me an email at mahe.yannick[at]gmail.com
 
 TODO
 ----
