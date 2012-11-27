@@ -54,7 +54,7 @@ To publish your changes click the "Publish all" link in the menu and follow inst
 
 Requirements
 ------------
-
+* Apache2
 * PHP 5.3+
 * SQlite3
 
@@ -76,11 +76,17 @@ Contribute
 ----------
 The project is just starting! If you wish to contribute, just submit a pull request - or send me an email at mahe.yannick[at]gmail.com
 
+Built upon
+----------
+ * http://php.net
+ * http://twitter.github.com/bootstrap/
+ * http://codemirror.net/
+ * http://www.sqlite.org/
+
 TODO
 ----
 * Page assets
 * User management
 * Publish (HTML generation)
 * Preview
-* Assets
 * Site layout
