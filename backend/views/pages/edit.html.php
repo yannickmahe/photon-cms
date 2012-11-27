@@ -14,7 +14,7 @@
 		<label>Head HTML</label>
 	    <textarea rows="30" 
 	    		  cols="50" 
-	    		  id="code" 
+	    		  id="head_code" 
 	    		  type="text" 
 	    		  style="width: 100%;" 
 	    		  name="page[head_html]" placeholder="<p>This page is my page</p>"><?php echo $page->head_html ?></textarea>
@@ -22,7 +22,7 @@
 		<label>Body HTML</label>
 	    <textarea rows="30" 
 	    		  cols="50" 
-	    		  id="code" 
+	    		  id="body_code" 
 	    		  type="text" 
 	    		  style="width: 100%;" 
 	    		  name="page[body_html]" placeholder="<p>This page is my page</p>"><?php echo $page->body_html ?></textarea>
@@ -38,7 +38,16 @@
 <script src="<?php echo app_root(); ?>/assets/js/codemirror-mode/javascript/javascript.js"></script>
 <script src="<?php echo app_root(); ?>/assets/js/codemirror-mode/css/css.js"></script>
 <script>
-  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+  var editor = CodeMirror.fromTextArea(document.getElementById("head_code"), {
+    lineNumbers: true,
+    matchBrackets: true,
+    indentUnit: 4,
+    indentWithTabs: true,
+    enterMode: "keep",
+  	mode: "text/html", 
+  	tabMode: "indent"
+ });
+  var editor2 = CodeMirror.fromTextArea(document.getElementById("body_code"), {
     lineNumbers: true,
     matchBrackets: true,
     indentUnit: 4,
