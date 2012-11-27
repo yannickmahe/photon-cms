@@ -24,3 +24,7 @@ function is_current($controller, $action = null){
 	return Context::getInstance()->action == $action && Context::getInstance()->controller == $controller;
 }
 
+function app_root(){
+	return Context::getInstance()->appRoot;
+}
+

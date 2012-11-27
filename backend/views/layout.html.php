@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title><?php include_partial('title'); ?></title>
-		<link href="/backend/assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="<?php echo app_root(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
 	    <style type="text/css">
 	      body {
 	        padding-top: 60px;
@@ -27,6 +27,6 @@
 		<?php echo $content; ?>
 		<?php include_partial('footer'); ?>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="/backend/assets/js/bootstrap.min.js"></script>
+		<script src="<?php echo app_root(); ?>/assets/js/bootstrap.min.js"></script>
 	</body>
 </html>

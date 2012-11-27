@@ -4,6 +4,16 @@ class Context{
 
 	private static $instance;
 
+	private function setAppRoot($directory = ''){
+		$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+		if($directory != ''){
+			$path_info = explode($directory, $_SERVER['REQUEST_URI']);
+			$this->appRoot = $protocol.$_SERVER['HTTP_HOST'].$path_info[0].$directory;
+		} else {
+			$this->appRoot = $protocol.$_SERVER['HTTP_HOST'];
+		}
+	}
+
 	public function getInstance(){
 		if(!self::$instance){
 			self::$instance = new Context();
@@ -11,8 +21,9 @@ class Context{
 		return self::$instance;
 	}
 
-	public function init(){
+	public function init($directory){
 		try{
+			$this->setAppRoot($directory);
 			Router::dispatch($_REQUEST);
 		} catch(Exception $e){
 			header('HTTP/1.1 500 Internal Server Error');
