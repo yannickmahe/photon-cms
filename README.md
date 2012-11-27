@@ -82,6 +82,5 @@ TODO
 * User management
 * Publish (HTML generation)
 * Preview
-* Themes
 * Assets
 * Site layout
