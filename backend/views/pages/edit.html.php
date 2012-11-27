@@ -11,7 +11,15 @@
 		<label>URL</label>
 	    <input type="text" class="input-xxlarge" name="page[url]" placeholder="/path/to/page/"  value="<?php echo $page->url ?>">
 
-		<label>HTML</label>
+		<label>Head HTML</label>
+	    <textarea rows="30" 
+	    		  cols="50" 
+	    		  id="code" 
+	    		  type="text" 
+	    		  style="width: 100%;" 
+	    		  name="page[head_html]" placeholder="<p>This page is my page</p>"><?php echo $page->head_html ?></textarea>
+
+		<label>Body HTML</label>
 	    <textarea rows="30" 
 	    		  cols="50" 
 	    		  id="code" 
