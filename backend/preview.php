@@ -1,4 +1,12 @@
 <?php
+include_once('model/Page.class.php');
 
-var_dump($_REQUEST);
-var_dump($_GET);
+$pages = Page::findBy('url',$_GET['url']);
+
+if(count($pages) == 0){
+	$pages = Page::findBy('url','/404.html');
+}
+
+$page = $pages[0];
+
+echo $page->html;
