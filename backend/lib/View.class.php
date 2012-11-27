@@ -3,7 +3,9 @@
 class View{
 
 	public static function render($filePath, $variables){
-		extract($variables);
+		if($variables !== null){
+			extract($variables);	
+		}		
 
 	    // render
 	    ob_start();

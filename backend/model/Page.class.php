@@ -16,4 +16,26 @@ class Page extends BaseTable{
 		}
 		parent::delete();
 	}
+
+	public function render($to_file = false){
+		//TODO
+		//Get themes
+		//Load functions
+		if($to_file){
+
+		} else {
+			echo $this->html;	
+		}
+		
+	}
+
+	public function save(){
+		if($this->url[0] != '/'){
+			throw new Exception("URL must begin with a /");
+		}
+		if(substr($this->url, 0, 8) == '/backend' ){
+			throw new Exception("Can't save page with url starting with /backend");
+		}
+		parent::save();
+	}
 }
