@@ -17,7 +17,7 @@ class Context{
 	}
 
 	public function getSessionUser(){
-		if(!$this->sessionUser){
+		if(!property_exists($this, 'sessionUser')){
 			$this->sessionUser = new SessionUser();
 		}
 		return $this->sessionUser;

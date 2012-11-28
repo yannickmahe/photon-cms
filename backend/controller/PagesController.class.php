@@ -12,7 +12,7 @@ class PagesController extends Controller{
 
 	public function editAction($request){
 		$this->checkLogin();
-		if($request['page']){
+		if(isset($request['page'])){
 			$submit = $request['page'];
 			if($submit['id'] != ''){
 				$id = $submit['id'];

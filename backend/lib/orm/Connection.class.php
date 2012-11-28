@@ -13,10 +13,10 @@ class Connection{
 	}
 
 	public function __construct(){
-		if(is_file('db/ftl.db')){
-			$this->sqlite3 = new SQLite3('db/ftl.db');
+		if(is_file('db/photon.db')){
+			$this->sqlite3 = new SQLite3('db/photon.db');
 		} else {
-			$this->sqlite3 = new SQLite3('db/ftl.db');
+			$this->sqlite3 = new SQLite3('db/photon.db');
 			$init = file_get_contents('db/init.sql');
 			$this->sqlite3->exec($init);
 		}

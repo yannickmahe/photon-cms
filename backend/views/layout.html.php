@@ -3,7 +3,6 @@
 	<head>
 		<title><?php include_partial('title'); ?></title>
 		<link href="<?php echo app_root(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
-		<link href="<?php echo app_root(); ?>/assets/css/bootstrap-responsive.css" rel="stylesheet">
 		<link href="<?php echo app_root(); ?>/assets/css/codemirror.css" rel="stylesheet">
 		
 	    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->

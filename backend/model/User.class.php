@@ -19,4 +19,8 @@ class User extends BaseTable{
 		return $valid;
 	}
 
+	public function isAdmin(){
+		return $this->login == 'admin';
+	}
+
 }
