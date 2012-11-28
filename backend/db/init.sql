@@ -7,3 +7,6 @@ CREATE TABLE layout_item (id INTEGER PRIMARY KEY, name STRING, html TEXT);
 
 CREATE TABLE config (id INTEGER PRIMARY KEY, name STRING, value STRING);
 	INSERT INTO config (name, value) VALUES ('theme','bootstrap');
+
+CREATE TABLE user (id INTEGER PRIMARY KEY, login STRING, password STRING);
+	INSERT INTO user (login, password) VALUES ('admin', '$2a$15$8/FBM.kff0NpKgpowVcgWOXAiEfj6sLhdb2wBzDeeFJIa.G8tUxce');

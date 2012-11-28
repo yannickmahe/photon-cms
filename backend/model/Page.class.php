@@ -24,7 +24,7 @@ class Page extends BaseTable{
 		if($to_file){
 
 		} else {
-			echo $this->html;	
+			echo $this->body_html;	
 		}
 		
 	}
@@ -35,6 +35,9 @@ class Page extends BaseTable{
 		}
 		if(substr($this->url, 0, 8) == '/backend' ){
 			throw new Exception("Can't save page with url starting with /backend");
+		}
+		if(substr($this->url, 0, 7) == '/assets' ){
+			throw new Exception("Can't save page with url starting with /assets");
 		}
 		parent::save();
 	}

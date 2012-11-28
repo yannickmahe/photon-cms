@@ -6,6 +6,7 @@ require_once('model/Config.class.php');
 class ThemesController extends Controller{
 
 	private function getAvailableThemes(){
+		$this->checkLogin();
 		$ret = array();
 		$h = opendir('themes');
 		while($dir = readdir($h)){
@@ -21,6 +22,7 @@ class ThemesController extends Controller{
 	}
 
 	public function updateAction($request){
+		$this->checkLogin();
 		$newTheme = $request['theme'];
 		if(in_array($newTheme, $this->getAvailableThemes())){
 			$config = Config::findBy('name','theme');
@@ -33,6 +35,7 @@ class ThemesController extends Controller{
 	}
 
 	public function indexAction($request){
+		$this->checkLogin();
 		$this->currentTheme = Config::findOneBy('name','theme')->value;
 		$this->themes = $this->getAvailableThemes();
 	}

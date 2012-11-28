@@ -28,3 +28,7 @@ function app_root(){
 	return Context::getInstance()->appRoot;
 }
 
+function is_logged_in(){
+	return Context::getInstance()->getSessionUser()->isLoggedIn();
+}
+

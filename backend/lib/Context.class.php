@@ -1,5 +1,7 @@
 <?php 
 
+require_once('lib/SessionUser.class.php');
+
 class Context{
 
 	private static $instance;
@@ -12,6 +14,13 @@ class Context{
 		} else {
 			$this->appRoot = $protocol.$_SERVER['HTTP_HOST'];
 		}
+	}
+
+	public function getSessionUser(){
+		if(!$this->sessionUser){
+			$this->sessionUser = new SessionUser();
+		}
+		return $this->sessionUser;
 	}
 
 	public function getInstance(){
@@ -28,6 +37,7 @@ class Context{
 
 	public function init($directory){
 		try{
+			session_start();
 			$this->setAppRoot($directory);
 			$path_info = explode('index.php', $_SERVER['REQUEST_URI']);
 			if(isset($path_info[1])){

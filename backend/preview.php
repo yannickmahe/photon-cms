@@ -9,4 +9,4 @@ if(count($pages) == 0){
 
 $page = $pages[0];
 
-echo $page->body_html;
+$page->render();

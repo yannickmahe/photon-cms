@@ -23,13 +23,14 @@ class Controller{
 		return $action.'.html.php';
 	}
 
-	public function dispatch($action,$request){
-		
-		if(Context::getInstance()->getCurrentUrl() != $this->getCanonicalUrl($action,$request)){
-			$this->redirect_to_url($this->getCanonicalUrl());
+	public function checkLogin(){
+		if(!Context::getInstance()->getSessionUser()->isLoggedIn()){
+			$this->redirect('login');
 		}
+	}
 
-		$actionName = $action.'Action';
+	public function dispatch($action,$request){
+		$actionName = $action.'Action';	
 		$variables = $this->$actionName($request);
 		$this->render($action);
 	}
