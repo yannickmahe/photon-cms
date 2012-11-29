@@ -18,7 +18,7 @@
 			<td>
 				<a class="btn" href="<?php echo url_for('users','edit',array('id' => $user->id)) ?>"><i class="icon-edit"></i> Edit</a>
 				<?php if($user->id != 1): ?>
-					<a class="btn btn-important" href="<?php echo url_for('users','delete',array('id' => $user->id)) ?>" class="btn"><i class="icon-white icon-remove-circle"></i> Delete</a>
+					<a class="btn btn-danger" href="<?php echo url_for('users','delete',array('id' => $user->id)) ?>" class="btn"><i class="icon-white icon-remove-circle"></i> Delete</a>
 				<?php endif; ?>
 			</td>
 		</tr>

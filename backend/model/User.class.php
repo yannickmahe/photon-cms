@@ -23,4 +23,9 @@ class User extends BaseTable{
 		return $this->login == 'admin';
 	}
 
+	public function setPassword($password){
+		$bcrypt = new Bcrypt(15);
+		$this->password = $bcrypt->hash($password);
+	}
+
 }

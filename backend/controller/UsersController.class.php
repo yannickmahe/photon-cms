@@ -10,10 +10,39 @@ class UsersController extends Controller{
 	}
 
 	public function deleteAction($request){
-		//TODO
+		$this->checkLogin();
+		$user = User::find($request['id']);
+		if($user){
+			$user->delete();
+		}
+		$this->redirect('users');
 	}
 
 	public function editAction($request){
-		//TODO
+		$this->checkLogin();
+		if(isset($request['user'])){
+			$submit = $request['user'];
+			if($submit['id'] != ''){
+				$id = $submit['id'];
+				$user = User::find($id);
+			} else {
+				$user = new User();
+			}
+			if($submit['password'] != $submit['password_confirmation']){
+				throw new Exception("Password and confirmation are different");
+			}
+			$user->login = $submit['login'];
+			$user->setPassword($submit['password']);
+			$user->save();
+			$this->redirect('users');
+		}
+
+		if(!$request['id']){
+			$this->title = "New user";
+			$this->user = new User();
+		} else {
+			$this->title = "Edit user";
+			$this->user = User::find($request['id']);
+		}
 	}
 }
