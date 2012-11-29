@@ -9,6 +9,7 @@
 				<td>id</id>
 				<td>Login</td>
 				<td>Actions</td>
+				<td>Delete</td>
 			</tr>
 		</thead>
 		<?php foreach($users as $user): ?>
@@ -17,6 +18,8 @@
 			<td><?php echo $user->login; ?></td>
 			<td>
 				<a class="btn" href="<?php echo url_for('users','edit',array('id' => $user->id)) ?>"><i class="icon-edit"></i> Edit</a>
+			</td>
+			<td>
 				<?php if($user->id != 1): ?>
 					<a class="btn btn-danger" href="<?php echo url_for('users','delete',array('id' => $user->id)) ?>" class="btn"><i class="icon-white icon-remove-circle"></i> Delete</a>
 				<?php endif; ?>

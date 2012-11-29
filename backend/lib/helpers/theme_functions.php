@@ -1,10 +1,9 @@
 <?php
 
+include_once('lib/Context.class.php');
 include_once('model/LayoutItem.class.php');
+include_once('model/Page.class.php');
 
-function include_theme_css(){
-	//TODO
-}
 
 function include_theme_partial($name){
 	$theme = Config::findOneBy('name','theme');
@@ -23,10 +22,45 @@ function include_theme_partial($name){
 	}
 }
 
-function include_theme_js(){
-	//TODO
+function link_to_page($id, $text, $classIfCurrent){
+	
+	$page = Page::find($id);
+	$currentPageId = Context::getInstance()->currentPageId;
+
+	if(Context::getInstance()->toFile){
+		$url = $page->url;
+	} else {
+		$url = 'http://localhost/photon-cms/backend/preview.php?url='.$page->url; //TODO
+	}
+
+	$ret =  '<a href="'.$url.'" '; 
+	if($page->id == $currentPageId){
+		$ret .= ' class="'.$classIfCurrent.'" ';
+	}
+	$ret .= '>';
+	$ret .= $text;
+	$ret .= '</a>';
+	echo $ret;
 }
 
-function link_to_page($id, $text, $classIfCurrent){
-	//TODO
+function include_theme_css(){
+	$theme = Config::findOneBy('name','theme');
+	$theme = $theme->value;
+	if(Context::getInstance()->toFile){
+		//Minimize CSS
+		//Include it
+	} else {
+		$base = 'http://localhost/photon-cms/backend/'.$theme.'/css/';
+	}
+}
+
+function include_theme_js(){
+	$theme = Config::findOneBy('name','theme');
+	$theme = $theme->value;
+	if(Context::getInstance()->toFile){
+		//Minimize JS
+		//Include it
+	} else {
+		$base = 'http://localhost/photon-cms/backend/'.$theme.'/js/';
+	}
 }

@@ -24,6 +24,9 @@ class Page extends BaseTable{
 		$page_head = View::renderVariable($this->head_html);
 		$page_content = View::renderVariable($this->body_html);
 
+		Context::getInstance()->toFile = $to_file;
+		Context::getInstance()->currentPageId = $this->id;
+
 		$theme = Config::findOneBy('name','theme');
 		$theme = $theme->value;
 		$themeLayoutFile = 'themes/'.$theme.'/layout.html.php';
@@ -38,6 +41,9 @@ class Page extends BaseTable{
 		} else {
 			echo $html;
 		}
+
+		unset(Context::getInstance()->toFile);
+		unset(Context::getInstance()->currentPageId);
 		
 	}
 
