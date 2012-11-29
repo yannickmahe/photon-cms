@@ -1,6 +1,7 @@
 <?php
 
 include_once('lib/orm/BaseTable.class.php');
+include_once('lib/View.class.php');
 
 class Page extends BaseTable{
 
@@ -20,11 +21,11 @@ class Page extends BaseTable{
 	public function render($to_file = false){
 		//TODO
 		//Get themes
-		//Load functions
+		//Load assets
 		if($to_file){
 
 		} else {
-			echo $this->body_html;	
+			echo View::renderVariable($this->body_html);	
 		}
 		
 	}
