@@ -1,6 +1,7 @@
 <?php
 
 require_once('lib/Controller.class.php');
+include_once('model/User.class.php');
 
 class UsersController extends Controller{
 

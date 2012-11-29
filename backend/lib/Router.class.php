@@ -6,11 +6,6 @@ class Router{
 	
 	public static function dispatch($path,$request){
 
-		foreach (glob("controller/*Controller.class.php") as $filename)
-		{
-		    include_once($filename);
-		}
-
 		$info = explode('/', $path);
 		if($info[0] == ''){
 			array_shift($info);
@@ -47,11 +42,11 @@ class Router{
 		unset($request['action'],$request['controller']);
 
 		$className = ucfirst($controllerName).'Controller';
-
+		include_once("controller/$className.class.php");
 		if(!class_exists($className)){
 			throw new Exception("Controller not found : ".$className);
 		}
-
+		
 		$controller = new $className();
 		$controller->dispatch($actionName, $request);
 	}

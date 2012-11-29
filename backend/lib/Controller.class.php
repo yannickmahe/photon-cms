@@ -31,7 +31,7 @@ class Controller{
 
 	public function dispatch($action,$request){
 		$actionName = $action.'Action';	
-		$variables = $this->$actionName($request);
+		$this->$actionName($request);
 		$this->render($action);
 	}
 
@@ -49,7 +49,6 @@ class Controller{
 	}
 
 	public function redirect_to_url($url){
-		// no redirect
 		header( "Location: $url" );
 	}
 }
