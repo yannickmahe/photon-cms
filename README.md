@@ -86,6 +86,6 @@ Built upon
 TODO
 ----
 * Page assets
-* User management
+* Minify CSS and JS
 * Publish (HTML generation)
 * Preview
