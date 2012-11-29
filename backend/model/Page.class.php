@@ -2,6 +2,7 @@
 
 include_once('lib/orm/BaseTable.class.php');
 include_once('lib/View.class.php');
+include_once('model/Config.class.php');
 
 class Page extends BaseTable{
 
@@ -19,13 +20,23 @@ class Page extends BaseTable{
 	}
 
 	public function render($to_file = false){
-		//TODO
-		//Get themes
-		//Load assets
+		$page_title = $this->title;
+		$page_head = View::renderVariable($this->head_html);
+		$page_content = View::renderVariable($this->body_html);
+
+		$theme = Config::findOneBy('name','theme');
+		$theme = $theme->value;
+		$themeLayoutFile = 'themes/'.$theme.'/layout.html.php';
+		$variables = array('page_title' 		=> $page_title,
+					  	   'page_head'  		=> $page_head,
+					  	   'page_content'		=> $page_content);
+
+		$html = View::renderThemeFile($themeLayoutFile,	$variables);
+
 		if($to_file){
 
 		} else {
-			echo View::renderVariable($this->body_html);	
+			echo $html;
 		}
 		
 	}
