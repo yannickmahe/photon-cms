@@ -36,9 +36,9 @@ class LayoutItem extends BaseTable{
 			throw new Exception("Theme doesn't exist: $theme");
 		}
 		$ret = array();
-		$itemsFiles = glob("themes/$theme/_*.html.php");;
+		$itemsFiles = glob("public/themes/$theme/_*.html.php");;
 		foreach($itemsFiles as $itemFile){
-			$itemFile = str_replace("themes/$theme/_", '', $itemFile);
+			$itemFile = str_replace("public/themes/$theme/_", '', $itemFile);
 			$itemFile = str_replace(".html.php", '', $itemFile);
 			$ret[] = $itemFile;
 		}

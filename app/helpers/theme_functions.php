@@ -22,32 +22,30 @@ function include_theme_partial($name){
 	}
 }
 
-function link_to_page($id, $text, $classIfCurrent){
-	
+function current_page($id, $html){
 	$page = Page::find($id);
 	$currentPageId = Context::getInstance()->currentPageId;
+	if($page->id == $currentPageId){
+		echo $html;
+	}
+}
+
+function page_url($id){
+	
+	$page = Page::find($id);
 
 	if(Context::getInstance()->toFile){
-		$url = $page->url;
+		return $page->url;
 	} else {
-		$url = 'http://localhost/photon-cms/public/backend/preview.php?url='.$page->url; //TODO
+		return 'http://localhost/photon-cms/public/backend/preview.php?url='.$page->url; //TODO
 	}
-
-	$ret =  '<a href="'.$url.'" '; 
-	if($page->id == $currentPageId){
-		$ret .= ' class="'.$classIfCurrent.'" ';
-	}
-	$ret .= '>';
-	$ret .= $text;
-	$ret .= '</a>';
-	echo $ret;
 }
 
 function include_theme_css(){
 	$theme = Config::findOneBy('name','theme');
 	$theme = $theme->value;
 	if(Context::getInstance()->toFile){
-		//Minimize CSS
+		//Find Minimized CSS
 		//Include it
 	} else {
 		$files = glob('public/themes/'.$theme.'/css/*.css');
@@ -61,7 +59,7 @@ function include_theme_js(){
 	$theme = Config::findOneBy('name','theme');
 	$theme = $theme->value;
 	if(Context::getInstance()->toFile){
-		//Minimize JS
+		//Find Minimized JS
 		//Include it
 	} else {
 		$files = glob('public/themes/'.$theme.'/js/*.js');
