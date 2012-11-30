@@ -2,6 +2,7 @@
 
 require_once('framework/orm/BaseTable.class.php');
 require_once('framework/View.class.php');
+require_once('app/model/ThemeView.class.php');
 require_once('app/model/db/Config.class.php');
 
 class Page extends BaseTable{
@@ -29,7 +30,7 @@ class Page extends BaseTable{
 
 		$theme = Config::findOneBy('name','theme');
 		$theme = $theme->value;
-		$themeLayoutFile = 'themes/'.$theme.'/layout.html.php';
+		$themeLayoutFile = 'public/themes/'.$theme.'/layout.html.php';
 		$variables = array('page_title' 		=> $page_title,
 					  	   'page_head'  		=> $page_head,
 					  	   'page_content'		=> $page_content);

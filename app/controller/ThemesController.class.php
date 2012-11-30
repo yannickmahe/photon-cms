@@ -11,7 +11,7 @@ class ThemesController extends Controller{
 		$h = opendir('themes');
 		while($dir = readdir($h)){
 			if($dir != '.' && $dir != '..'){
-				if(is_file('themes'.DIRECTORY_SEPARATOR.$dir.DIRECTORY_SEPARATOR.'layout.html.php')){
+				if(is_file('public'.DIRECTORY_SEPARATOR.'themes'.DIRECTORY_SEPARATOR.$dir.DIRECTORY_SEPARATOR.'layout.html.php')){
 					$ret[$dir] = true;
 				} else {
 					$ret[$dir] = false;

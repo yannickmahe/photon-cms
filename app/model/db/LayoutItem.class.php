@@ -28,7 +28,7 @@ class LayoutItem extends BaseTable{
 	}
 
 	public static function getDefaultValue($theme, $item){
-		return file_get_contents("themes/$theme/_$item.html.php");
+		return file_get_contents("public/themes/$theme/_$item.html.php");
 	}
 
 	public static function getRequiredItemNames($theme){

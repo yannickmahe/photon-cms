@@ -14,7 +14,7 @@ function include_theme_partial($name){
 		$item = $itemsArr[0];
 		echo View::renderVariable($item->html);
 	} else {
-		$filePath = 'themes'.DIRECTORY_SEPARATOR.$theme.DIRECTORY_SEPARATOR.'_'.$name.'.html.php';
+		$filePath = 'public'.DIRECTORY_SEPARATOR.'themes'.DIRECTORY_SEPARATOR.$theme.DIRECTORY_SEPARATOR.'_'.$name.'.html.php';
 		if(!file_exists($filePath)){
 			throw new Exception("Can't find required partial. Expected path: ".$filePath);
 		}
@@ -51,6 +51,7 @@ function include_theme_css(){
 		//Include it
 	} else {
 		$base = 'http://localhost/photon-cms/backend/'.$theme.'/css/';
+		//TODO
 	}
 }
 
@@ -62,5 +63,6 @@ function include_theme_js(){
 		//Include it
 	} else {
 		$base = 'http://localhost/photon-cms/backend/'.$theme.'/js/';
+		//TODO
 	}
 }
