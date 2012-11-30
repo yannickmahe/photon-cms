@@ -22,11 +22,11 @@
 </div>
 
 
-<script src="http://localhost/photon-cms/backend/assets/js/codemirror.js"></script>
-<script src="http://localhost/photon-cms/backend/assets/js/codemirror-mode/htmlmixed/htmlmixed.js"></script>
-<script src="http://localhost/photon-cms/backend/assets/js/codemirror-mode/xml/xml.js"></script>
-<script src="http://localhost/photon-cms/backend/assets/js/codemirror-mode/javascript/javascript.js"></script>
-<script src="http://localhost/photon-cms/backend/assets/js/codemirror-mode/css/css.js"></script>
+<script src="<?php echo app_root(); ?>/assets/js/codemirror.js"></script>
+<script src="<?php echo app_root(); ?>/backend/assets/js/codemirror-mode/htmlmixed/htmlmixed.js"></script>
+<script src="<?php echo app_root(); ?>/backend/assets/js/codemirror-mode/xml/xml.js"></script>
+<script src="<?php echo app_root(); ?>/backend/assets/js/codemirror-mode/javascript/javascript.js"></script>
+<script src="<?php echo app_root(); ?>/backend/assets/js/codemirror-mode/css/css.js"></script>
 <script type="text/javascript">
 <?php foreach($itemsArr as $item): ?>
   var editor<?php echo $item->id ?> = CodeMirror.fromTextArea(document.getElementById("item_<?php echo $item->id ?>"), {
