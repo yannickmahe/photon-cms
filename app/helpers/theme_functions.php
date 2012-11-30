@@ -35,9 +35,9 @@ function page_url($id){
 	$page = Page::find($id);
 
 	if(Context::getInstance()->toFile){
-		return $page->url;
+		echo $page->url;
 	} else {
-		return 'http://localhost/photon-cms/public/backend/preview.php?url='.$page->url; //TODO
+		echo 'http://localhost/photon-cms/public/backend/preview.php?url='.$page->url; //TODO
 	}
 }
 

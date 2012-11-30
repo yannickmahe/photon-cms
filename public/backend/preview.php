@@ -2,6 +2,11 @@
 chdir(dirname(__FILE__).'/../../');
 require_once('app/model/db/Page.class.php');
 require_once('framework/Context.class.php');
+require_once('framework/Controller.class.php');
+
+session_start();
+$c = new Controller();
+$c->checkLogin();
 
 $pages = Page::findBy('url',$_GET['url']);
 

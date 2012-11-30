@@ -1,6 +1,7 @@
 <?php
 
 require_once('framework/View.class.php');
+require_once('framework/Router.class.php');
 
 class Controller{
 
