@@ -6,7 +6,7 @@ class Context{
 
 	private static $instance;
 
-	private function setAppRoot($directory = ''){
+	public function setAppRoot($directory = ''){
 		$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 		if($directory != ''){
 			$path_info = explode($directory, $_SERVER['REQUEST_URI']);
@@ -14,6 +14,7 @@ class Context{
 		} else {
 			$this->appRoot = $protocol.$_SERVER['HTTP_HOST'];
 		}
+
 	}
 
 	public function getSessionUser(){

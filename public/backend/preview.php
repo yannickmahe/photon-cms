@@ -1,6 +1,7 @@
 <?php
 chdir(dirname(__FILE__).'/../../');
 require_once('app/model/db/Page.class.php');
+require_once('framework/Context.class.php');
 
 $pages = Page::findBy('url',$_GET['url']);
 

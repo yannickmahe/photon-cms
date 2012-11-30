@@ -7,7 +7,11 @@
 </head>
 <body>
 	<?php include_theme_partial('header'); ?>
-	<?php echo $page_content; ?>
-	<?php include_theme_partial('footer'); ?>
+	<div class="container">
+		<?php echo $page_content; ?>
+	</div>
+	<div class="container">
+		<?php include_theme_partial('footer'); ?>
+	</div>
 	<?php include_theme_js(); ?>
 </body>

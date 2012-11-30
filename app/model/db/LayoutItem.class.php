@@ -32,7 +32,7 @@ class LayoutItem extends BaseTable{
 	}
 
 	public static function getRequiredItemNames($theme){
-		if(!is_dir('themes')){
+		if(!is_dir('public/themes/'.$theme)){
 			throw new Exception("Theme doesn't exist: $theme");
 		}
 		$ret = array();

@@ -50,8 +50,10 @@ function include_theme_css(){
 		//Minimize CSS
 		//Include it
 	} else {
-		$base = 'http://localhost/photon-cms/backend/'.$theme.'/css/';
-		//TODO
+		$files = glob('public/themes/'.$theme.'/css/*.css');
+		foreach($files as $file){
+			echo '<link href="http://localhost/photon-cms/'.$file.'" rel="stylesheet" />';
+		}
 	}
 }
 
@@ -62,7 +64,9 @@ function include_theme_js(){
 		//Minimize JS
 		//Include it
 	} else {
-		$base = 'http://localhost/photon-cms/backend/'.$theme.'/js/';
-		//TODO
+		$files = glob('public/themes/'.$theme.'/js/*.js');
+		foreach($files as $file){
+			echo '<script src="http://localhost/photon-cms/'.$file.'"></script>';
+		}
 	}
 }
