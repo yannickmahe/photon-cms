@@ -1,7 +1,7 @@
 <?php
 
-require_once('lib/Controller.class.php');
-require_once('model/Config.class.php');
+require_once('framework/Controller.class.php');
+require_once('app/model/db/Config.class.php');
 
 class ThemesController extends Controller{
 

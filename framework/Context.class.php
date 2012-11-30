@@ -1,6 +1,6 @@
 <?php 
 
-require_once('lib/SessionUser.class.php');
+require_once('framework/SessionUser.class.php');
 
 class Context{
 

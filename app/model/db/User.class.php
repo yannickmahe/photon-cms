@@ -1,7 +1,7 @@
 <?php
 
-include_once('lib/orm/BaseTable.class.php');
-include_once('lib/Bcrypt.class.php');
+require_once('framework/orm/BaseTable.class.php');
+require_once('framework/Bcrypt.class.php');
 
 class User extends BaseTable{
 

@@ -1,6 +1,6 @@
 <?php
 
-require_once('lib/View.class.php');
+require_once('framework/View.class.php');
 
 class Controller{
 
@@ -12,7 +12,7 @@ class Controller{
 	}
 
 	private function getViewsFolder(){
-		return 'views'.DIRECTORY_SEPARATOR.$this->getName();
+		return 'app/views'.DIRECTORY_SEPARATOR.$this->getName();
 	}
 
 	private function getCanonicalUrl($action,$request){
@@ -41,7 +41,7 @@ class Controller{
 		$variables = get_object_vars($this);
 		$content = View::render($contentFilePath,$variables);
 
-		echo View::render('views/layout.html.php', array('content' => $content));
+		echo View::render('app/views/layout.html.php', array('content' => $content));
 	}
 
 	public function redirect($controller,$action = 'index',$variables = array()){

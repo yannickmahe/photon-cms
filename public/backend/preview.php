@@ -1,5 +1,6 @@
 <?php
-include_once('model/Page.class.php');
+chdir(dirname(__FILE__).'/../../');
+require_once('app/model/db/Page.class.php');
 
 $pages = Page::findBy('url',$_GET['url']);
 

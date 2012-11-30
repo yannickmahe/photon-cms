@@ -1,7 +1,7 @@
 <?php
 
-require_once('lib/Controller.class.php');
-require_once('model/User.class.php');
+require_once('framework/Controller.class.php');
+require_once('app/model/db/User.class.php');
 
 class LoginController extends Controller{
 

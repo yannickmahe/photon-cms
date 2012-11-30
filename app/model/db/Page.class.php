@@ -1,8 +1,8 @@
 <?php
 
-include_once('lib/orm/BaseTable.class.php');
-include_once('lib/View.class.php');
-include_once('model/Config.class.php');
+require_once('framework/orm/BaseTable.class.php');
+require_once('framework/View.class.php');
+require_once('app/model/db/Config.class.php');
 
 class Page extends BaseTable{
 

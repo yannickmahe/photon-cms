@@ -1,8 +1,8 @@
 <?php
 
-include_once('lib/Context.class.php');
-include_once('model/LayoutItem.class.php');
-include_once('model/Page.class.php');
+require_once('framework/Context.class.php');
+require_once('app/model/db/LayoutItem.class.php');
+require_once('app/model/db/Page.class.php');
 
 
 function include_theme_partial($name){
@@ -30,7 +30,7 @@ function link_to_page($id, $text, $classIfCurrent){
 	if(Context::getInstance()->toFile){
 		$url = $page->url;
 	} else {
-		$url = 'http://localhost/photon-cms/backend/preview.php?url='.$page->url; //TODO
+		$url = 'http://localhost/photon-cms/public/backend/preview.php?url='.$page->url; //TODO
 	}
 
 	$ret =  '<a href="'.$url.'" '; 

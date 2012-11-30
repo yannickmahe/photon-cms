@@ -13,7 +13,7 @@ class View{
 
 	    try
 	    {
-	      require_once(dirname(__FILE__).'/helpers/view_functions.php');
+	      require_once('framework/helpers/view_functions.php');
 	      require($filePath);
 	    }
 	    catch (Exception $e)
@@ -37,7 +37,7 @@ class View{
 
 	    try
 	    {
-	      require_once(dirname(__FILE__).'/helpers/theme_functions.php');
+	      require_once('app/helpers/theme_functions.php');
 	      require($filePath);
 	    }
 	    catch (Exception $e)
@@ -54,7 +54,7 @@ class View{
 		if($variables !== null){
 			extract($variables);	
 		}		
-		include_once(dirname(__FILE__).'/helpers/theme_functions.php');
+		require_once('app/helpers/theme_functions.php');
 
 	    // render
 	    ob_start();

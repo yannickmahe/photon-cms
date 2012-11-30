@@ -9,7 +9,7 @@ function url_for($controller,$action = 'index',$variables = array()){
 }
 
 function include_partial($name,$variables = null){
-	$filePath = 'views'.DIRECTORY_SEPARATOR.'partials'.DIRECTORY_SEPARATOR.'_'.$name.'.html.php';
+	$filePath = 'app/views'.DIRECTORY_SEPARATOR.'partials'.DIRECTORY_SEPARATOR.'_'.$name.'.html.php';
 	if(!file_exists($filePath)){
 		throw new Exception("Can't find required partial. Expected path: ".$filePath);
 	}

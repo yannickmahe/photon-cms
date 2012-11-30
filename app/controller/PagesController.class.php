@@ -1,7 +1,7 @@
 <?php
 
-require_once('lib/Controller.class.php');
-require_once('model/Page.class.php');
+require_once('framework/Controller.class.php');
+require_once('app/model/db/Page.class.php');
 
 class PagesController extends Controller{
 

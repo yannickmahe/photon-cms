@@ -1,6 +1,6 @@
 <?php
 
-require_once('lib/Context.class.php');
+require_once('framework/Context.class.php');
 
 class Router{
 	
@@ -42,7 +42,7 @@ class Router{
 		unset($request['action'],$request['controller']);
 
 		$className = ucfirst($controllerName).'Controller';
-		include_once("controller/$className.class.php");
+		include_once("app/controller/$className.class.php");
 		if(!class_exists($className)){
 			throw new Exception("Controller not found : ".$className);
 		}

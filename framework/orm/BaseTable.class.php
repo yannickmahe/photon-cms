@@ -1,6 +1,6 @@
 <?php
 
-require_once('lib/orm/Connection.class.php');
+require_once('framework/orm/Connection.class.php');
 
 class BaseTable{
 
